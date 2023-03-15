@@ -19,9 +19,12 @@ public class Game {
             System.out.println();
             System.out.println("1 - Güvenli Ev");
             System.out.println("2 - Mağaza");
+            System.out.println("0 - Çıkış Yap");
             System.out.println("Lütfen gitmek istediğiniz bölgeyi seçiniz :");
         int selectloc = input.nextInt();
         switch (selectloc){
+            case 0:
+                location = null;
             case 1:
                 location = new SafeHouse(player);
                 break;
@@ -30,6 +33,10 @@ public class Game {
                 break;
             default:
                 location = new SafeHouse(player);
+        }
+        if (location == null){
+            System.out.println("Bu karanlık ve sisli adadan çabuk vazgeçtin !");
+            break;
         }
         if (!location.onLocation()){
             System.out.println("GMAE OVER !");
