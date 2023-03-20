@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Player {
     private int damage;
     private int health;
+    private int orjinalHealth;
     private int money;
     private String name;
     private String charName;
@@ -17,7 +18,7 @@ public class Player {
     public void selectChar(){
         GameChar[] charlist = {new Samurai(),new Archer(),new Knight()};
         System.out.println("Karakterler");
-        System.out.println("---------------------------------");
+        System.out.println("---------------------------------------------------------");
         for (GameChar gameChar : charlist){
             System.out.println("ID:"+ gameChar.getId()+
                     "\tKarakter: " +gameChar.getName() +
@@ -25,7 +26,7 @@ public class Player {
                     "\tSağlık: " + gameChar.getHealth() +
                     "\tPara: " + gameChar.getMoney());
         }
-        System.out.println("---------------------------------");
+        System.out.println("---------------------------------------------------------");
         System.out.println("Lütfen bir karakter giriniz !");
         int selectChar = input.nextInt();
         switch (selectChar){
@@ -53,6 +54,7 @@ public class Player {
     public void initPlayer(GameChar gameChar){
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
+        this.setOrjinalHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
         this.setCharName(gameChar.getName());
     }
@@ -113,5 +115,13 @@ public class Player {
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+    }
+
+    public int getOrjinalHealth() {
+        return orjinalHealth;
+    }
+
+    public void setOrjinalHealth(int orjinalHealth) {
+        this.orjinalHealth = orjinalHealth;
     }
 }
