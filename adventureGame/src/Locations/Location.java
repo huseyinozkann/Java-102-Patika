@@ -1,3 +1,5 @@
+package Locations;
+
 import java.util.Scanner;
 
 public abstract class Location {
@@ -6,7 +8,7 @@ public abstract class Location {
 
     public static Scanner input = new Scanner(System.in);
 
-    public Location(Player player,String name) {
+    public Location(Player player, String name) {
         this.player = player;
         this.name = name;
     }

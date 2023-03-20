@@ -1,4 +1,6 @@
-public class ToolStore extends NormalLoc{
+package Locations;
+
+public class ToolStore extends NormalLoc {
     public ToolStore(Player player) {
         super(player, "Mağaza");
     }
@@ -12,11 +14,11 @@ public class ToolStore extends NormalLoc{
            System.out.println("2 - Zırhlar");
            System.out.println("3 - Çıkış Yap");
            System.out.print("Seçiminiz : ");
-           int selectCase = input.nextInt();
+           int selectCase = Location.input.nextInt();
 
            while(selectCase < 1 || selectCase > 3){
                System.out.print("Geçersiz değer, tekrar giriniz : ");
-               selectCase = input.nextInt();
+               selectCase = Location.input.nextInt();
            }
            switch (selectCase){
                case 1:
@@ -49,10 +51,10 @@ public class ToolStore extends NormalLoc{
 
     public void buyWeapon(){
         System.out.println("Bir silah seçiniz : ");
-        int selectWeaponID = input.nextInt();
+        int selectWeaponID = Location.input.nextInt();
         while (selectWeaponID < 0 || selectWeaponID > Weapon.weapons().length){
             System.out.println("Geçersiz değer, tekrar giriniz:");
-            selectWeaponID = input.nextInt();
+            selectWeaponID = Location.input.nextInt();
         }
         if (selectWeaponID != 0){
             Weapon selectedWeapon = Weapon.getWeaponObjByID(selectWeaponID);
@@ -88,10 +90,10 @@ public class ToolStore extends NormalLoc{
 
     public void buyArmor(){
         System.out.println("Bir zırh seçiniz : ");
-        int selectArmorID = input.nextInt();
+        int selectArmorID = Location.input.nextInt();
         while (selectArmorID < 0 || selectArmorID > Armor.armors().length){
             System.out.println("Geçersiz değer, tekrar giriniz:");
-            selectArmorID = input.nextInt();
+            selectArmorID = Location.input.nextInt();
         }
 
         if (selectArmorID != 0){

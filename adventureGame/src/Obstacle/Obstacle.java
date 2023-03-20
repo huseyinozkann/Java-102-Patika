@@ -1,3 +1,5 @@
+package Obstacle;
+
 public class Obstacle {
     private int id;
     private String name;

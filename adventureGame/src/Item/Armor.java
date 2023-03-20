@@ -1,3 +1,5 @@
+package Item;
+
 public class Armor {
     private int id;
     private String name;

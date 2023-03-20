@@ -1,10 +1,14 @@
+package Locations;
+
+import Obstacle.Obstacle;
+
 import java.util.Random;
 
-public abstract class BattleLoc extends Location{
+public abstract class BattleLoc extends Location {
     private Obstacle obstacle;
     private String award;
     private int maxObstacle;
-    public BattleLoc(Player player, String name,Obstacle obstacle,String award,int maxObstacle) {
+    public BattleLoc(Player player, String name, Obstacle obstacle, String award, int maxObstacle) {
         super(player, name);
         this.obstacle = obstacle;
         this.award = award;
@@ -18,7 +22,7 @@ public abstract class BattleLoc extends Location{
         System.out.println("Şuan buradasınız : " + this.getName());
         System.out.println("Dikkatli Ol ! Burada " + obsNumber + " tane " + this.getObstacle().getName() + " yaşıyor !");
         System.out.print("<S>avaş veya <K>aç : ");
-        String selectCase = input.nextLine();
+        String selectCase = Location.input.nextLine();
         selectCase = selectCase.toUpperCase();
         if (selectCase.equals("S") && combat(obsNumber)){
             //savaş
@@ -42,7 +46,7 @@ public abstract class BattleLoc extends Location{
             obstacleStats(i);
             while(this.getPlayer().getHealth() > 0 && this.getObstacle().getHealth() > 0){
                 System.out.print("<V>ur veya <K>aç : ");
-                String selectCombat = input.nextLine().toUpperCase();
+                String selectCombat = Location.input.nextLine().toUpperCase();
                 if(selectCombat.equals("V")){
                     if (firstHit == 0){
                         System.out.println("Siz vurdunuz !");
@@ -81,7 +85,7 @@ public abstract class BattleLoc extends Location{
 
             if (this.getObstacle().getHealth() < this.getPlayer().getHealth()){
                 System.out.println("Düşmanı yendiniz !");
-                if (this.getObstacle().getName().equals("Snake")){
+                if (this.getObstacle().getName().equals("Obstacle.Snake")){
                     snakeAward();
                 }
                 System.out.println(this.getObstacle().getAward() + " para kazandınız !");

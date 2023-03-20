@@ -1,3 +1,7 @@
+package Game;
+
+import Locations.*;
+
 import java.util.Scanner;
 
 public class Game {
